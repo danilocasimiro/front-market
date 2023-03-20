@@ -1,21 +1,17 @@
 import { Sidebar } from "@/components/Sidebar"
 import { Navbar } from "@/components/Navbar";
-import { useSession, signIn, signOut } from "next-auth/react"
+import { useSession } from "next-auth/react"
 import appendScript from '../../services/appendExternalJsFile';
+import { useRouter } from "next/router";
 
 export default function Dashboard() {
-  const { data: session } = useSession()
-  // if(session) {
-  //   console.log('session', session)
-  //   return <>
-  //     Signed in as {session.user.email} <br/>
-  //     <button onClick={() => signOut()}>Sign out</button>
-  //   </>
-  // }
-  // return <>
-  //   Not signed in <br/>
-  //   <button onClick={() => signIn()}>Sign in</button>
-  // </>
+  const router = useRouter();
+  const { data: session, status } = useSession();
+
+  if (!session && status == "unauthenticated") {
+    router.push('/sign-in');
+  }
+
   return (
     <>
       { appendScript('https://buttons.github.io/buttons.js') }

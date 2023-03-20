@@ -47,7 +47,8 @@ export default NextAuth({
     }
   },
   pages: {
-    signIn: '/sign-in'
+    signIn: '/sign-in',
+    signOut: '/sign-in',
   },
   secret: 'test',
   jwt: {

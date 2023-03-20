@@ -1,3 +1,5 @@
+import { signOut } from "next-auth/react"
+
 export function Navbar() {
   return (
     <>
@@ -19,9 +21,9 @@ export function Navbar() {
             </div>
             <ul className="navbar-nav  justify-content-end">
               <li className="nav-item d-flex align-items-center">
-                <a href="javascript:;" className="nav-link text-white font-weight-bold px-0">
+                <a href="javascript:;" onClick={() => signOut({ redirect: false })} className="nav-link text-white font-weight-bold px-0">
                   <i className="fa fa-user me-sm-1"></i>
-                  <span className="d-sm-inline d-none">Sign In</span>
+                  <span className="d-sm-inline d-none">Sign Out</span>
                 </a>
               </li>
             </ul>
