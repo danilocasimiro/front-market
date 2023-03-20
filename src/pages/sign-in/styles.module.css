@@ -1,0 +1,8 @@
+.background {
+  background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signin-ill.jpg');
+  background-size: cover;
+}
+
+.background_color {
+  background-color: hsla(0,0%,100%,.8);
+}
